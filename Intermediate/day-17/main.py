@@ -1,10 +1,14 @@
 from question_model import Question
+from quiz_brain import QuizBrain
 from data import question_data
 
 question_bank = []
 
 for question in question_data:
-    question_bank.append(Question(question["text"], question["answer"]))
+    question_bank.append(Question(question["text"], question["answer"].lower()))
 
+quiz = QuizBrain(question_bank)
+quiz.ask_questions()
 
-print(question_bank[0].answer)
+print("you've completed the quiz")
+print(f"your final score is: {quiz.score}/{quiz.question_number + 1}")

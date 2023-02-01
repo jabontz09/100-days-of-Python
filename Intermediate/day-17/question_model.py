@@ -4,5 +4,3 @@ class Question:
         self.text = text
         self.answer = answer
 
-new_q = Question("whos the strongest avenger", "Hulk")
-print(f"{new_q.text}: {new_q.answer}")
