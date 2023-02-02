@@ -5,10 +5,10 @@ from data import question_data
 question_bank = []
 
 for question in question_data:
-    question_bank.append(Question(question["text"], question["answer"].lower()))
+    question_bank.append(Question(question["question"], question["correct_answer"].lower()))
 
 quiz = QuizBrain(question_bank)
 quiz.ask_questions()
 
 print("you've completed the quiz")
-print(f"your final score is: {quiz.score}/{quiz.question_number + 1}")
+print(f"your final score is: {quiz.score}/{quiz.question_number}")
